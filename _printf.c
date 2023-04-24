@@ -10,8 +10,6 @@
  */
 int _printf(const char *format, ...)
 {
-	int a, number = 0;
-
 	va_list my_list;
 
 	int count = 0;
@@ -27,7 +25,6 @@ int _printf(const char *format, ...)
 	{
 		if (c == '%')
 		{
-			const char *c = format++;
 
 			switch (*format)
 			{
