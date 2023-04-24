@@ -9,5 +9,4 @@
  */
 int interger_specifier(va_list args)
 {
-
 }

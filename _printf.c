@@ -39,10 +39,6 @@ int _printf(const char *format, ...)
 					putchar('%');
 					count++;
 					break;
-				case 'd':
-				case 'i':
-					count +- printf(my_list);
-					break;
 				default:
 					putchar('%');
 					putchar(c);
