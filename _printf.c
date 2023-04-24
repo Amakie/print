@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		if (c == '%')
 		{
 
-			switch (*format)
+			switch (*format++)
 			{
 				case 'c':
 					putchar(va_arg(my_list, int));
