@@ -27,14 +27,14 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					printf(va_arg(my_list, int));
+					putchar(va_arg(my_list, int));
 					count++;
 					break;
 				case 's':
 					count += printf("%s", va_arg(my_list, char*));
 					break;
 				case '%':
-					printf('%');
+					putchar('%');
 					count++;
 					break;
 				default:
@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			printf(c);
+			putchar(c);
 			count++;
 		}
 	}
