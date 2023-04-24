@@ -1,3 +1,5 @@
+#include <stdarg.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -15,10 +17,10 @@ int _printf(const char *format, ...)
 	 char c;
 
 	va_start(my_list, format);
-	{
+
 	if (format == NULL)
 		return (-1);
-	}
+
 	while ((c = *format++) != '\0')
 	{
 		if (c == '%')
