@@ -17,7 +17,7 @@ int int_conversion(va_list args, char *str, unsigned int n)
 	if (int_add < 0)
 	{
 		int_ad = int_add * -1;
-		n = handle_buf(str, '-', n);
+		n = handle_buffer(str, '-', n);
 		neg = 1;
 	}
 	else
@@ -36,7 +36,7 @@ int int_conversion(va_list args, char *str, unsigned int n)
 
 	for (a = 0; divide > 0; divide /= 10, a++)
 	{
-		n = handle_buf(str, ((int_ad / divide) % 10) + '0', n);
+		n = handle_buffer(str, ((int_ad / divide) % 10) + '0', n);
 	}
 	return (a + neg);
 }

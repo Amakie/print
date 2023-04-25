@@ -20,6 +20,8 @@ typedef struct print_func
 } print_f;
 
 int _printf(const char *format, ...);
-int int_conversion((va_list args, char *str, unsigned int n);
+int int_conversion(va_list args, char *str, unsigned int n);
+unsigned int handle_buffer(char *str, char b, unsigned int n);
+int print_buffer(char *str, unsigned int numbuffer);
 
 #endif
