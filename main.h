@@ -20,8 +20,13 @@ typedef struct print_func
 } print_f;
 
 int _printf(const char *format, ...);
+int (*func)(va_list, char *, unsigned int);
 int int_conversion(va_list args, char *str, unsigned int n);
 unsigned int handle_buffer(char *str, char b, unsigned int n);
 int print_buffer(char *str, unsigned int numbuffer);
+int get_function(const char *s, int ind);
+int get_function(const char *s, int ind);
+int print_string(va_list args, char *str, unsigned int n);
+int print_perc(va_list a __attribute__((unused)), char *str, unsigned int i);
 
 #endif
