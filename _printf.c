@@ -10,50 +10,53 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list my_list;
+	va_list args;
+
+	va_start(args, format);
 
 	int count = 0;
 
-	 char c;
+	while (*format != '\0')
+	{
+	if (*format == '%')
+		{
+		format++;
+	if (*format == 'd' || *format == 'i')
+		{
+		int value = va_arg(args, int);
 
-	va_start(my_list, format);
+		printf("%d", value);
+		count += snprintf(NULL, 0, "%d", value);
+		}
+	else if (*format == 's')
+		{
+		char *str = va_arg(args, char*);
 
-	if (format == NULL)
+		fputs(str, stdout);
+		count += strlen(str);
+		{
+	else if (*format == '%')
+		{
+		putchar('%');
+		count++;
+		}
+	else
+		{
+
 		return (-1);
 
-	while ((c = *format++) != '\0')
-	{
-		if (c == '%')
+		}
+
+	else
 		{
 
-			switch (*format++)
-			{
-				case 'c':
-					putchar(va_arg(my_list, int));
-					count++;
-					break;
-				case 's':
-					count += printf("%s", va_arg(my_list, char*));
-					break;
-				case '%':
-					putchar('%');
-					count++;
-					break;
-				default:
-					putchar('%');
-					putchar(c);
-					count += 2;
-					break;
-			}
+		putchar(*format);
+		count++;
 		}
-		else
-		{
-			putchar(c);
-			count++;
-		}
+	format++;
 	}
 
-	va_end(my_list);
+	va_end(args);
 
 	return (count);
 }
