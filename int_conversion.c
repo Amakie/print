@@ -4,7 +4,7 @@
 
 /**
  * _printf - conversion specifier for integer
- * ...: varidic function
+ * ...: variadic function
  * @format: string
  * Return: number of characters printed
  */
