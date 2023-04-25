@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 /**
  * _printf - conversion specifier for integer
@@ -24,6 +26,7 @@ int _printf(const char *format, ...)
 				value += va_arg(mylist, int);
 				printf("%d", value);
 				num_chars++;
+				value = 0;
 			}
 
 			else
